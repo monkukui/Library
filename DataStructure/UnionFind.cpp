@@ -29,7 +29,6 @@ using namespace std;
 const int INF = 1001001001001001LL;
 const int MOD = 1000000007;
 
-
 struct UnionFind{
     
     vector<int> M_par;
@@ -72,6 +71,7 @@ public:
         if(M_rank[x] == M_rank[y]) M_rank[x]++;
         M_par[y] = x;
         M_size[x] = M_size[x] + M_size[y];
+        return true;
     }
 
     size_t size(size_t x){
@@ -80,34 +80,8 @@ public:
 
 };
 
-
 signed main(){
-    
 
-    int n, m; cin >> n >> m;
-    UnionFind uf(n);
-    vector<int> a(m);
-    vector<int> b(m);
-    for(int i = 0; i < m; i++){
-        cin >> a[i] >> b[i];
-        a[i]--;
-        b[i]--;
-    }
-    int ans = n * (n - 1) / 2;
-    vector<int> v;
-    for(int i = m - 1; i >= 0; i--){
-        v.push_back(ans);
-        int x = a[i];
-        int y = b[i];
-
-        if(!uf.issame(x, y)){
-            ans -= uf.getSize(x) * uf.getSize(y);
-            uf.Union(x, y);
-        }
-
-    }
-
-    for(int i = m - 1; i >= 0; i--) cout << v[i] << endl;
     return 0;
 }
 
