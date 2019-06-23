@@ -1,4 +1,6 @@
 // verified : http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
+// O(E log V)
+
 
 template<typename T>
 vector<T> dijkstra(vector<vector<pair<int, T> &g, int s){
