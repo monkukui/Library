@@ -1,34 +1,5 @@
-#include <iostream>
-#include <iomanip>
-#include <cstdio>
-#include <string>
-#include <cstring>
-#include <deque>
-#include <list>
-#include <queue>
-#include <stack>
-#include <vector>
-#include <utility>
-#include <algorithm>
-#include <map>
-#include <set>
-#include <complex>
-#include <cmath>
-#include <limits>
-#include <cfloat>
-#include <climits>
-#include <ctime>
-#include <cassert>
-#include <numeric>
-#include <fstream>
-#include <functional>
-#include <bitset>
-
-using namespace std;
-#define int long long int
-const int INF = 1001001001001001LL;
-const int MOD = 1000000007;
-
+// verified : http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A
+// O(E V^2)
 
 template< typename T >
 struct Dinic{
@@ -46,6 +17,8 @@ struct Dinic{
 
     Dinic(int V) : inf(numeric_limits<T>::max()), g(V){}
 
+
+    // 0-indexed
     void add_edge(int from, int to, T cap){
         g[from].emplace_back((edge){to, cap, (int)g[to].size(), false});
         g[to].emplace_back((edge){from, 0, (int)g[from].size() - 1, true});
@@ -81,9 +54,10 @@ struct Dinic{
                 }
             }
         }
-    return 0;
-  }
+        return 0;
+    }
     
+    // 0-indexed
     T max_flow(int s, int t){
         T flow = 0;
         while(bfs(s, t)){
@@ -95,15 +69,3 @@ struct Dinic{
         return flow;
     }
 };
-
-signed main(){
-    
-    int n, m; cin >> n >> m;
-    Dinic<int> g(n);
-    for(int i = 0; i < m; i++){
-        int a, b, c; cin >> a >> b >> c;
-        g.add_edge(a, b, c);
-    }
-    cout << g.max_flow(0, n - 1) << endl;
-    return 0;
-}
