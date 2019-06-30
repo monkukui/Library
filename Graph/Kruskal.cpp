@@ -1,3 +1,8 @@
+// 最小全域木を求めるアルゴリズム
+// Union Find を使う方
+// O(E log V)
+// verify : http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=jp
+
 struct UnionFind{
     
     vector<int> M_par;
@@ -48,3 +53,27 @@ public:
     }
 
 };
+
+
+// [入力] undirected-graph [出力] コスト
+template<typename T>
+T kruskal(vector<vector<pair<int, T>>> &g){
+    
+    int n = (int)g.size();
+    //{cost, {to, from}}
+    vector<pair<T, pair<int, int>>> edges;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < g[i].size(); j++){
+            edges.push_back({g[i][j].second, {i, g[i][j].first}});
+        }
+    }
+
+    sort(edges.begin(), edges.end());
+    UnionFind uf(n);
+    T ret = 0;
+    for(int i = 0; i < (int)edges.size(); i++){
+        if(uf.unite(edges[i].second.first, edges[i].second.second)) ret += edges[i].first;
+    }
+
+    return ret;
+}

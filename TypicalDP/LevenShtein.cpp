@@ -1,30 +1,5 @@
-#include <iostream>
-#include <iomanip>
-#include <cstdio>
-#include <string>
-#include <cstring>
-#include <deque>
-#include <list>
-#include <queue>
-#include <stack>
-#include <vector>
-#include <utility>
-#include <algorithm>
-#include <map>
-#include <set>
-#include <complex>
-#include <cmath>
-#include <limits>
-#include <cfloat>
-#include <climits>
-#include <ctime>
-#include <cassert>
-#include <numeric>
-#include <fstream>
-#include <functional>
-#include <bitset>
-
-using namespace std;
+// 編集距離
+// O(|s||t|)
 
 int LevenShtein(const string &s, const string &t){
     int n = (int)s.size();

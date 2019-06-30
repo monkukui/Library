@@ -1,4 +1,5 @@
 // verified : http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
+// 負辺があると動作しない?
 // O(E log V)
 
 
