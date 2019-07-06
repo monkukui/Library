@@ -1,19 +1,17 @@
 // verified : http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
 // 負辺があると動作しない?
 // O(E log V)
-
-
 template<typename T>
-vector<T> dijkstra(vector<vector<pair<int, T> &g, int s){
-    
+vector<T> dijkstra(vector<vector<pair<int, T>>> &g, int s){
+     
     int n = g.size();
     // numeric_limits がうまく使えない場合は自分で INF を定義する.
-    const auto INF = numeric_limits<T>::max();
-    vector<T> dist(n, INF);
-
+    const auto inf = numeric_limits<T>::max();
+    vector<T> dist(n, inf);
+ 
     using P = pair<T, int>;
     // 小さい順に取り出せる
-    priority<queue<P, vector<P>, greater<P>> que;
+    priority_queue<P, vector<P>, greater<P>> que;
     dist[s] = 0;
     que.emplace(dist[s], s);
     while(!que.empty()){
@@ -30,6 +28,6 @@ vector<T> dijkstra(vector<vector<pair<int, T> &g, int s){
             que.emplace(next_cost, next_node);
         }
     }
-
+ 
     return dist;
 }
