@@ -1,6 +1,10 @@
 // verified : http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A
 // O(E V^2)
 
+// [使い方]
+// add_edge(from, to, cap) :  from から to へ 容量 cap の辺を貼る
+// max_flow(s, t) :  s から t への最大フローを返す
+
 template< typename T >
 struct Dinic{
     const T inf;
@@ -41,6 +45,7 @@ struct Dinic{
         }
         return min_cost[t] != -1;
     }
+    
     T dfs(int idx, const int t, T flow){
         if(idx == t) return flow;
         for(int &i = iter[idx]; i < g[idx].size(); i++){
@@ -67,5 +72,15 @@ struct Dinic{
         }
 
         return flow;
+    }
+    
+    void output() {
+        for(int i = 0; i < graph.size(); i++) {
+            for(auto &e : graph[i]) {
+                if(e.isrev) continue;
+                auto &rev_e = graph[e.to][e.rev];
+                cout << i << "->" << e.to << " (flow: " << rev_e.cap << "/" << e.cap + rev_e.cap << ")" << endl;
+            }
+        }
     }
 };
