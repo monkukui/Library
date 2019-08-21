@@ -30,13 +30,6 @@ public:
         dat[i + 1][j + 1] += dat[i][j + 1];
       }
     }
-
-    rep(i, h + 1){
-      rep(j, w + 1){
-        cout << dat[i][j] << " ";
-      }
-      cout << endl;
-    }
   }
 
   T get(size_t l, size_t r, size_t u, size_t d){ // 0-indexed, [l, r), [u, d)
