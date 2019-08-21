@@ -15,7 +15,7 @@ private:
   vector<vector<T>> dat;
 
 public: 
-  RecSum(vector<vector<T>> v){
+  RecSum(const vector<vector<T>> &v){
     h = v.size();
     w = v[0].size();
     dat.resize(h + 1);
@@ -32,7 +32,7 @@ public:
     }
   }
 
-  T get(size_t l, size_t r, size_t u, size_t d){ // 0-indexed, [l, r), [u, d)
+  T get(size_t l, size_t r, size_t u, size_t d) const { // 0-indexed, [l, r), [u, d)
     return dat[d][r] - dat[u][r] - dat[d][l] + dat[u][l];
   }
 };

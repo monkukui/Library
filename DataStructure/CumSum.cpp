@@ -8,7 +8,7 @@ private:
   vector<T> dat;
 
 public: 
-  CumSum(vector<T> v){
+  CumSum(const vector<T> &v){
     n = v.size();
     dat.resize(n + 1, 0);
     for(size_t i = 0; i < n; i++){
@@ -16,7 +16,7 @@ public:
     }
   }
 
-  T get(size_t r){ // 0-indexed, [0. r)
+  T get(size_t r) const { // 0-indexed, [0. r)
     return dat[r];
   }
 
