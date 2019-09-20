@@ -71,3 +71,23 @@ struct LazySegmentTree{
         return f(vl,vr);
     }
 };
+
+/**  テンプレ
+int main(){
+  using T = ***;  // type T
+  using E = ***;  // type E
+  auto f = [](T a, T b){ // return type T value
+    return ***;
+  };
+  auto g = [](T a, E b){ // return type T value
+    return ***;
+  };
+  auto g = [](E a, E b){ // return type E value
+    return ***;
+  };
+  T ti = ***;  // identify element
+  E ei = ***;  // identify element
+  SegmentTree<T, E, decltype(f), decltype(g), decltype(h)> sg(f, g, h, ti, ei);  // don't change
+  sg.build(***);   // 初期配列を代入
+}
+**/

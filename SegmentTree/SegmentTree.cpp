@@ -56,3 +56,20 @@ struct SegmentTree{
     }*/
     
 };
+
+
+/**  テンプレ
+int main(){
+  using T = ***;  // type T
+  using E = ***;  // type E
+  auto f = [](T a, T b){ // return type T value
+    return ***;
+  };
+  auto g = [](T a, E b){ // return type T value
+    return ***;
+  };
+  T ti = ***;  // identify element
+  SegmentTree<T, E, decltype(f), decltype(g)> sg(f, g, ti);  // don't change
+  sg.build(***);   // 初期配列を代入
+}
+**/
