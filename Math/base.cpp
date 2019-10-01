@@ -89,7 +89,7 @@ map<long long, long long> prime_factors(long long n) {
 
 
 // 繰り返し 2 乗法
-long long modpow(long long a, long long n, long long MOD) {
+long long modpow(long long a, long long n) {
   long long res = 1;
   while (n > 0) {
     if (n & 1) res = res * a % MOD;
