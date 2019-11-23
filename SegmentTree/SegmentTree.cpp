@@ -38,8 +38,6 @@ struct SegmentTree{
         return f(vl,vr);
     }
 
-    
-    
     /* TODO わからない 聞く 
     template<typename C>
     int find(int a,int b,C &check,int k,int l,int r){
@@ -66,7 +64,7 @@ int main(){
     return ***;
   };
   auto g = [](T a, E b){ // return type T value
-    return ***;
+    return ***;  // return b;
   };
   T ti = ***;  // identify element
   SegmentTree<T, E, decltype(f), decltype(g)> sg(f, g, ti);  // don't change
