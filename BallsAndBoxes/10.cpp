@@ -24,3 +24,5 @@ int main() {
   cout << P[n][k] << endl;
   return 0;
 }
+
+

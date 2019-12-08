@@ -75,10 +75,10 @@ struct Dinic{
     }
     
     void output() {
-        for(int i = 0; i < graph.size(); i++) {
-            for(auto &e : graph[i]) {
+        for(int i = 0; i < g.size(); i++) {
+            for(auto &e : g[i]) {
                 if(e.isrev) continue;
-                auto &rev_e = graph[e.to][e.rev];
+                auto &rev_e = g[e.to][e.rev];
                 cout << i << "->" << e.to << " (flow: " << rev_e.cap << "/" << e.cap + rev_e.cap << ")" << endl;
             }
         }

@@ -30,7 +30,6 @@ int main() {
   
   comb_init();
   int n, k; cin >> n >> k;
-  cout << COM(n - 1, n - k) << endl;
-
+  cout << mod_comb(n - 1, n - k) << endl;
   return 0;
 }

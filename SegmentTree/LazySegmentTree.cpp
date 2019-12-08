@@ -72,6 +72,15 @@ struct LazySegmentTree{
     }
 };
 
+/* 
+ *    [考えるべきこと]
+ *    区間をマージしてから作用素を作用させても、作用素を作用させてから区間をマージするのと結果が同じ
+ *    複数の作用素をマージして一度に作用させられること
+ *    作用素を伝搬し終わっているのかの判定に必要（まあこれは満たされていなくても最悪どうにかなる）
+ *    O(N) とかだと困る（setのマージとか）
+ * 
+ */
+
 /**  テンプレ
 int main(){
   using T = ***;  // type T
@@ -82,12 +91,12 @@ int main(){
   auto g = [](T a, E b){ // return type T value
     return ***;
   };
-  auto g = [](E a, E b){ // return type E value
+  auto h = [](E a, E b){ // return type E value
     return ***;
   };
   T ti = ***;  // identify element
   E ei = ***;  // identify element
-  SegmentTree<T, E, decltype(f), decltype(g), decltype(h)> sg(f, g, h, ti, ei);  // don't change
+  LazySegmentTree<T, E, decltype(f), decltype(g), decltype(h)> sg(f, g, h, ti, ei);  // don't change
   sg.build(***);   // 初期配列を代入
 }
 **/

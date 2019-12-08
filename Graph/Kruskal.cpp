@@ -1,6 +1,6 @@
 // 最小全域木を求めるアルゴリズム
 // Union Find を使う方
-// O(E log V)
+// O(E log E)
 // verify : http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=jp
 
 struct UnionFind{

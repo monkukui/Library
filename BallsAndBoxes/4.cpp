@@ -28,8 +28,8 @@ long long COM(long long n, long long k){
 
 int main() {
   
-  int n, k; cin >> n >> k;
   comb_init();
-  cout << COM(n + k - 1, k - 1) << endl; 
+  int n, k; cin >> n >> k;
+  cout << mod_comb(n + k - 1, k - 1) << endl; 
   return 0;
 }

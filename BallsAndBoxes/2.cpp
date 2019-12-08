@@ -14,8 +14,13 @@ int perm(int k, int n) {
 }
 
 int main() {
-  // kPn
   int n, k; cin >> n >> k;
   cout << perm(k, n) << endl;
   return 0;
 }
+
+
+
+
+
+

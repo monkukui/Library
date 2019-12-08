@@ -8,7 +8,8 @@ int main() {
   
   // 箱が足りるなら 1
   // 足りないなら 0
-  cout << (n <= k) << endl;
+  if(n <= k) cout << 1 << endl;
+  else cout << 0 << endl;
 
   return 0;
 }
