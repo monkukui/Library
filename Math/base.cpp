@@ -66,6 +66,7 @@ vector<long long> divisors(long long n) {
     if(n/i == i) continue; // 上の行で追加済み。
     res.push_back(n/i);
   }
+  sort(res.begin(), res.end());
   return res;
 }
 

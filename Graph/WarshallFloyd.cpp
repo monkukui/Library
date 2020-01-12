@@ -1,8 +1,18 @@
-vector<vector<long long>> WarshallFloyd(const vector<vector<pair<int, long long>>> &g) {
-  const long long L_INF = 1001001001001001LL;
+template<typename T>
+vector<vector<T>> WarshallFloyd(const vector<vector<pair<int, T>>> &g) {
+  // numeric_limits がうまく使えない場合は自分で INF を定義する.
+  const auto inf = numeric_limits<T>::max() / 10;
   int n = g.size();
-  vector<vector<long long>> dist(n, vector<long long> (n, L_INF));
+  vector<vector<T>> dist(n, vector<T> (n, inf));
   for(int i = 0; i < n; i++) dist[i][i] = 0;
+
+  for(int u = 0; u < n; u++) {
+    for(auto e : g[u]) {
+      int v = e.first;
+      T cost = e.second;
+      dist[u][v] = cost;
+    }
+  }
   for(int k = 0; k < n; k++)
     for(int i = 0; i < n; i++)
       for(int j = 0; j < n; j++)
@@ -10,3 +20,4 @@ vector<vector<long long>> WarshallFloyd(const vector<vector<pair<int, long long>
 
   return dist;
 }
+
