@@ -116,7 +116,7 @@ long long modinv(long long a, long long m) {
 long long fac[MAXN], finv[MAXN], inv[MAXN];
 
 // 前処理 O(n)
-void comb_init(){
+void math_init(){
   fac[0] = fac[1] = 1;
   finv[0] = finv[1] = 1;
   inv[1] = 1;
@@ -135,3 +135,4 @@ long long COM(long long n, long long k){
 }
 
 
+// before your coding, you have to write a line "math_init()"
