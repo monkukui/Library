@@ -1,13 +1,13 @@
 // 根は 0
 // 構築 O(n log n) クエリ O(log n)
 // 無向グラフ（木）を与える．
-struct DoublingLowestCommonAncestor {
+struct LowestCommonAncestor {
   const int LOG;
   vector<int> dep;
   const vector<vector<int>> &g;
   vector<vector<int>> table;
 
-  DoublingLowestCommonAncestor(const vector<vector<int>> &g) : g(g), dep(g.size()), LOG(32 - __builtin_clz(g.size())) {
+  LowestCommonAncestor(const vector<vector<int>> &g) : g(g), dep(g.size()), LOG(32 - __builtin_clz(g.size())) {
     table.assign(LOG, vector<int>(g.size(), -1));
   }
 
