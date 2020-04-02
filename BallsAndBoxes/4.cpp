@@ -4,6 +4,7 @@ using namespace std;
 const int MOD = 1000000007;
 const long long MAXN = 1001024;
 long long fac[MAXN], finv[MAXN], inv[MAXN];
+#define lint long long int
 
 // 前処理 O(n)
 void comb_init(){
@@ -24,12 +25,13 @@ long long COM(long long n, long long k){
   return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
 }
 
-
+int sub(lint n, lint k) {
+   
+  comb_init();
+  return COM(n + k - 1, k - 1);
+}
 
 int main() {
-  
-  comb_init();
-  int n, k; cin >> n >> k;
-  cout << mod_comb(n + k - 1, k - 1) << endl; 
-  return 0;
+  lint n, k; cin >> n >> k;
+  cout << sub(n, k) << endl;
 }
