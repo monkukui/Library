@@ -1,6 +1,8 @@
 // 根は 0
 // 構築 O(n log n) クエリ O(log n)
 // 無向グラフ（木）を与える．
+// TODO build() 呼び出す!
+
 struct LowestCommonAncestor {
   const int LOG;
   vector<int> dep;
@@ -42,6 +44,7 @@ struct LowestCommonAncestor {
         v = table[i][v];
       }
     }
+    assert(table[0][u] != -1);
     return table[0][u];
   }
   

@@ -78,6 +78,7 @@ struct LazySegmentTree{
  *    複数の作用素をマージして一度に作用させられること
  *    作用素を伝搬し終わっているのかの判定に必要（まあこれは満たされていなくても最悪どうにかなる）
  *    O(N) とかだと困る（setのマージとか）
+ *    区間の長さに比例して作用が変わるときは，practice/RSRA や Library-Checher の RangeAffineRangeSum を参照する
  * 
  */
 
