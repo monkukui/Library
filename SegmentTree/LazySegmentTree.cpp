@@ -95,9 +95,9 @@ int main(){
   auto h = [](E a, E b){ // return type E value
     return ***;
   };
-  T ti = ***;  // identify element
-  E ei = ***;  // identify element
+  T ti = ***;  // identity element
+  E ei = ***;  // identity element
   LazySegmentTree<T, E, decltype(f), decltype(g), decltype(h)> sg(f, g, h, ti, ei);  // don't change
-  sg.build(***);   // 初期配列を代入
+  sg.build(***);
 }
 **/

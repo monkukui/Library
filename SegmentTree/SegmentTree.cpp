@@ -66,8 +66,8 @@ int main(){
   auto g = [](T a, E b){ // return type T value
     return ***;  // return b;
   };
-  T ti = ***;  // identify element
+  T ti = ***;  // identity element
   SegmentTree<T, E, decltype(f), decltype(g)> sg(f, g, ti);  // don't change
-  sg.build(***);   // 初期配列を代入
+  sg.build(***);
 }
 **/
