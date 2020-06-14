@@ -105,20 +105,20 @@ struct LazySegmentTree{
 signed main(){
     
     int n, q; cin >> n >> q;
-    using T = pair<int, int>;
-    using E = int;
-    auto f = [](T l, T r){
-        return T(l.first + r.first, l.second + r.second);
+    using t = pair<int, int>;
+    using e = int;
+    auto f = [](t l, t r){
+        return t(l.first + r.first, l.second + r.second);
     };
-    auto g = [](T l, E r){
-        return T(l.first + l.second * r, l.second);       
+    auto g = [](t l, e r){
+        return t(l.first + l.second * r, l.second);       
     };
-    auto h = [](E l, E r){
+    auto h = [](e l, e r){
         return l + r;
     };
 
-    LazySegmentTree<T, E, decltype(f), decltype(g), decltype(h)> sg(f, g, h, T(0, 0), 0);
-    sg.build(vector<T>(n, T(0, 1)));
+    lazysegmenttree<t, e, decltype(f), decltype(g), decltype(h)> sg(f, g, h, t(0, 0), 0);
+    sg.build(vector<t>(n, t(0, 1)));
     for(int i = 0; i < q; i++){
         int com; cin >> com;
         if(!com){

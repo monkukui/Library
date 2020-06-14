@@ -17,7 +17,6 @@ pair<T, int> dfs(const vector<vector<pair<int, T>>> &g, int idx, int par){
     return ret;
 }
 
-
 template<typename T>
 T tree_diameter(const vector<vector<pair<int, T>>> &g){
 
