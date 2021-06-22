@@ -52,4 +52,9 @@ struct LowestCommonAncestor {
   int depth(int u) {
     return dep[u];
   }
+
+  // a, b の距離を返す
+  int dist(int a, int b) {
+      return dep[a] + dep[b] - 2 * dep[query(a, b)];
+  }
 };
